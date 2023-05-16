@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/header', { title: 'Registrarse' }); %>
+<body>
+
+    <div class="logo">
+        <img src="/static/images/logolargo.png">
+    </div>
+    
+    <div class="center">
+        <h1>REGISTRARSE</h1>
+        <form autocomplete="off" method="post" id="form">
+            <div class="txt_field">
+                <input type="text" name="new-username" id="username" maxlength="20" required>
+                <label>Usuario</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="new-password" id="password" maxlength="20" required>
+                <label>Contraseña</label>
+            </div>
+            <div class="error">
+                <p id="error-text" class="invisible"></p>
+            </div>
+            <button class="button" id="button">Crear cuenta</button>
+            <div class="login_link">
+                Si ya tenes cuenta, <a href="/login">Iniciá Sesión</a>.
+            </div>
+        </form>
+        <div class="loading-container invisible" id="loading-bar">
+            <div class="loading" id="loading"></div>
+        </div>
+    </div>
+
+    <script src="/static/js/register.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<%- include('partials/header', { title: 'Inicio' }); %>
+<%- include('partials/navbar', { username: username, linked: linked }); %>
+<body>
+    <div class="center">
+        <div class="container">
+
+            <% if(linked) {
+
+                %>
+                
+                <p>Tu cuenta de ADPS está vinculada con una cuenta de MercadoLibre.</p>
+
+                <button><a href="/meli">ABRIR PANEL</a></button>
+
+                <%
+
+            } else {
+
+                %>
+                
+                <p>¡Vinculá ADPS con tu cuenta de Mercado Libre!</p>
+
+                <%
+                    let url = "https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=" + process.env.MELICLIENTID + "&redirect_uri=" + process.env.MELIREDIRECTURI;
+                %>
+                <button><a href="<%=url%>">VINCULAR</a></button>
+
+                <%
+
+            } %>
+            
+
+        </div>
+    </div>
+
+    <script src="/static/js/home.js"></script>
+</body>

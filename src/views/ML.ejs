@@ -1,0 +1,58 @@
+<%- include('partials/header', { title: 'Panel MELI' }); %>
+<%- include('partials/navbar', { username: username, linked: true }); %>
+
+<body>
+    <div class="center">
+        <div class="container">
+
+            <div class="search">
+                <form method="POST">
+                    <input class="input" type="number" placeholder="Nº de venta" id="input-sellid">
+
+                    <button id="btn-search">BUSCAR</button>
+                </form>
+            </div>
+
+            <div class="error invisible" id="error">
+                <p>Ocurrió un error. Verifique que el número ingresado sea correcto.</p>
+            </div>
+
+            <div class="loading-container invisible" id="loading-bar">
+                <div class="loading" id="loading"></div>
+            </div>
+
+            <div class="content">
+                
+                <div class="sell invisible" id="sell_card">
+                    <h4 class="sell-id" id="sell_id"></h4>
+                    <div class="sell-body">
+                        <div class="sell-data">
+                            <p class="sell-data" id="sell_name"></p>
+                            <p class="sell-data" id="sell_date"></p>
+                            <p class="sell-data" id="sell_price"></p>
+                        </div>
+                        <div class="sell-actions">
+                            <div>
+                                <img src="/static/images/download.svg" id="btn-download-receipt">
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="extra-data invisible" id="extra-data">
+                        <input placeholder="Lugar" id="input-place" maxlength="30">
+                        <input placeholder="Fecha" id="input-date" maxlength="30">
+                        <label class="checkbox" for="checkbox">
+                            <input type="checkbox" id="sku_checkbox" checked>SKU
+                        </label>
+                        <button id="btn-confirm-download">DESCARGAR</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="/static/js/ML.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script> <!--JSPDF-->
+</body>

@@ -1,0 +1,48 @@
+* {
+    text-decoration: none;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background: white;
+    box-sizing: border-box;
+    box-shadow: 5px 0 10px #000;
+    width: 75%;
+    height: fit-content;
+    margin-top: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container p {
+    font-size: 25px;
+    margin: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.container a {
+    color: white;
+}
+
+.container button {
+    border: 3px solid black;
+    border-radius: 10px;
+    font-size: 30px;
+    width: fit-content;
+    font-weight: 900;
+    background: linear-gradient(120deg, #2980b9, #8e44ad);
+    margin: 10px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.container button:hover {
+    border-color: white;
+}

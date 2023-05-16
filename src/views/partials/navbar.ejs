@@ -1,0 +1,25 @@
+<link rel="stylesheet" type="text/css" href="/static/css/navbar.css">
+<div class="navbar">
+    <div class="logo-container">
+        <a href="/"><img src="/static/images/logolargos.png"></a>
+        
+    </div>
+    <div class="user-container">
+        <div class="user">
+            <img src="/static/images/bottomArrow.svg" class="arrow">
+            <p><%=username%></p>
+            <img src="/static/images/user.svg" class="username">
+        </div>
+        <div class="dropdown-content" id="dropdown">
+            <% if (linked) {
+                %>
+                <a href="/unlink">Desvincular de ML</a>
+                <%
+            } %>
+            <a href="/signout">Cerrar sesión</a>
+        </div>
+    </div>
+    
+</div>
+
+<script src="/static/js/navbar.js"></script>

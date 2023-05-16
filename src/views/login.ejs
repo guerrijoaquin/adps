@@ -1,0 +1,40 @@
+<%- include('partials/header', { title: 'Entrar' }); %>
+<body>
+
+    <div class="logo">
+        <img src="/static/images/logolargo.png">
+    </div>
+
+    <div class="center">
+        <h1>ENTRAR</h1>
+        <form method="POST" id="form">
+            <% if (registered) { %>
+                <div class="registered">
+                    <p>Registrado correctamente. Iniciá sesión:</p>
+                </div>
+            <% } %>
+            <div class="txt_field">
+                <input type="text" name="current-username" id="username" maxlength="20" required>
+                <label>Usuario</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="current-password" id="password" maxlength="20" required>
+                <label>Contraseña</label>
+            </div>
+            <div class="error">
+                <p id="error-text" class="invisible"></p>
+            </div>
+            <button type="submit" class="button" id="button">Iniciar sesión</button>
+            <div class="login_link">
+                Si no tenes cuenta, <a href="/register">Registrate</a>.
+            </div>
+        </form>
+        <div class="loading-container invisible" id="loading-bar">
+            <div class="loading" id="loading"></div>
+        </div>
+    </div>
+
+    <script src="/static/js/login.js"></script>
+
+</body>
+</html>
